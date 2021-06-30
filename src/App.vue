@@ -1,5 +1,7 @@
 <template>
+<div class="title-container">
   <Title msg="Book Club" />
+</div>
   <Book
     v-for="book in books"
     :key="book.title"
@@ -88,12 +90,22 @@ export default defineComponent({
 </script>
 
 <style>
+@font-face {
+  font-family: "Avaline Script";
+  src: local("Avaline Script Sketch"),
+   url("./assets/fonts/Avaline-Script-Sketch.ttf") format("truetype");
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Avaline Script;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: #fb7507;
+  font-size: 26px;
+}
+div .title-container {
+  background-color: #e63f80;
+  width: 100%;
+  padding: 20px;
 }
 </style>

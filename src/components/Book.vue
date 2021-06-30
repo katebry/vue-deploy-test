@@ -6,9 +6,11 @@
         :src="require(`@/assets/bookCovers/${this.imageName}.jpg`)"
         :alt="this.imageAlt"
       />
-      <button @click="toggleRatings">
-        {{ ratingsVisible ? "Hide Average Rating" : "Show Average Rating" }}
-      </button>
+      <div class="btn-wrapper">
+        <button @click="toggleRatings">
+          {{ ratingsVisible ? "Hide Average Rating" : "Show Average Rating" }}
+        </button>
+      </div>
       <h1 v-if="this.ratingsVisible">{{ rating }}</h1>
       <p v-if="this.ratingsVisible">
         <Ratings :scores="scores" />
@@ -54,7 +56,12 @@ export default defineComponent({
 
 <style>
 button {
-  background-color: #42b983;
+  background-color: #e63f80;
+  color: white;
+  font-family: Avaline Script;
+  font-size: 24px;
+  padding: 10px;
+  border-radius: 20px;
 }
 div .container {
   display: flex;
@@ -64,6 +71,12 @@ div .container {
 div .content {
   display: flex;
   flex-direction: column;
+}
+div .btn-wrapper {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 15px;
 }
 img {
   min-width: 300px;
