@@ -104,8 +104,8 @@ export default defineComponent({
   font-size: 26px;
 }
 div .title-container {
-  background-color: #e63f80;
   width: 100%;
+  height: 13vh;
   padding: 20px;
 }
 </style>

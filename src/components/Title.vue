@@ -1,24 +1,30 @@
 <template>
-  <div>
-    <h1>{{ msg }}</h1>
-  </div>
+  <particles-bg num="10" type="tadpole" />
+  <h1>{{ msg }}</h1>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { ParticlesBg } from "particles-bg-vue";
 
 export default defineComponent({
   name: "Title",
+  components: {
+    ParticlesBg,
+  },
   props: {
     msg: String,
   },
 });
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h1 {
-  color: white;
+  color: #e63f80;
+  position: absolute;
   font-size: 50px;
+  top: 25px;
+  left: 0;
+  right: 0;
 }
 </style>
