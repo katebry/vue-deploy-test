@@ -1,13 +1,20 @@
 <template>
-  <h2>{{ title }}</h2>
-  <img :src="require(`@/assets/bookCovers/${this.imageName}.jpg`)" :alt="this.imageAlt" />
-  <button @click="toggleRatings">
-    {{ ratingsVisible ? "Hide Average Rating" : "Show Average Rating" }}
-  </button>
-  <h1 v-if="this.ratingsVisible">{{ rating }}</h1>
-  <p v-if="this.ratingsVisible">
-    <Ratings :scores="scores" />
-  </p>
+  <div class="container">
+    <div class="content">
+      <h2>{{ title }}</h2>
+      <img
+        :src="require(`@/assets/bookCovers/${this.imageName}.jpg`)"
+        :alt="this.imageAlt"
+      />
+      <button @click="toggleRatings">
+        {{ ratingsVisible ? "Hide Average Rating" : "Show Average Rating" }}
+      </button>
+      <h1 v-if="this.ratingsVisible">{{ rating }}</h1>
+      <p v-if="this.ratingsVisible">
+        <Ratings :scores="scores" />
+      </p>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -48,5 +55,14 @@ export default defineComponent({
 <style>
 button {
   background-color: #42b983;
+}
+div .container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+div .content {
+  display: flex;
+  flex-direction: column;
 }
 </style>
