@@ -65,4 +65,8 @@ div .content {
   display: flex;
   flex-direction: column;
 }
+img {
+  min-width: 300px;
+  min-height: 475px;
+}
 </style>
