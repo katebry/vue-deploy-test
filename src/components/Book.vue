@@ -1,5 +1,6 @@
 <template>
   <h2>{{ title }}</h2>
+  <img :src="require(`@/assets/bookCovers/${this.imageName}.jpg`)" :alt="this.imageAlt" />
   <button @click="toggleRatings">
     {{ ratingsVisible ? "Hide Average Rating" : "Show Average Rating" }}
   </button>
@@ -27,9 +28,11 @@ export default defineComponent({
       type: String,
       required: true,
     },
+    imageName: String,
+    imageAlt: String,
     scores: Object,
   },
-  data: function () {
+  data: function() {
     return {
       ratingsVisible: false,
     };

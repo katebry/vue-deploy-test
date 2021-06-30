@@ -5,6 +5,8 @@
     :key="book.title"
     :title="book.title"
     :rating="book.rating"
+    :imageName="book.imageName"
+    :imageAlt="book.imageAlt"
     :scores="book.scores"
   />
 </template>
@@ -20,12 +22,14 @@ export default defineComponent({
     Title,
     Book,
   },
-  data: function () {
+  data: function() {
     return {
       books: [
         {
           title: "Nevada",
           rating: "4.5",
+          imageName: "nevada",
+          imageAlt: "Nevada book cover",
           scores: {
             kate: "3",
             neal: "5",
@@ -38,6 +42,8 @@ export default defineComponent({
         {
           title: "One Day in the Life of Ivan Denisovich",
           rating: "7.4",
+          imageName: "ivanDenisovich",
+          imageAlt: "One Day in the Life of Ivan Denisovich book cover",
           scores: {
             kate: "10",
             neal: "9",
@@ -50,6 +56,8 @@ export default defineComponent({
         {
           title: "Stonefish",
           rating: "3.9",
+          imageName: 'stonefish',
+          imageAlt: 'Stonefish book cover',
           scores: {
             kate: "1.5",
             neal: "4",
@@ -62,6 +70,8 @@ export default defineComponent({
         {
           title: "The Haunting of Hill House",
           rating: "8.4",
+          imageName: 'hauntingOfHH',
+          imageAlt: 'The Haunting of Hill House book cover',
           scores: {
             kate: "8",
             neal: "10",
