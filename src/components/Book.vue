@@ -2,19 +2,21 @@
   <div class="container">
     <div class="content">
       <h2>{{ title }}</h2>
-      <img
-        :src="require(`@/assets/bookCovers/${this.imageName}.jpg`)"
-        :alt="this.imageAlt"
-      />
+      <div class="img-wrapper">
+        <img
+          :src="require(`@/assets/bookCovers/${this.imageName}.jpg`)"
+          :alt="this.imageAlt"
+        />
+      </div>
       <div class="btn-wrapper">
         <button @click="toggleRatings">
           {{ ratingsVisible ? "Hide Average Rating" : "Show Average Rating" }}
         </button>
       </div>
       <h1 v-if="this.ratingsVisible">{{ rating }}</h1>
-      <p v-if="this.ratingsVisible">
+      <div v-if="this.ratingsVisible">
         <Ratings :scores="scores" />
-      </p>
+      </div>
     </div>
   </div>
 </template>
@@ -41,7 +43,7 @@ export default defineComponent({
     imageAlt: String,
     scores: Object,
   },
-  data: function() {
+  data: function () {
     return {
       ratingsVisible: false,
     };
@@ -62,6 +64,10 @@ button {
   font-size: 24px;
   padding: 10px;
   border-radius: 20px;
+  border: none;
+}
+button:active {
+  background-color: #f205bf;
 }
 div .container {
   display: flex;
@@ -78,8 +84,12 @@ div .btn-wrapper {
   align-content: center;
   padding: 15px;
 }
+div .img-wrapper {
+  display: flex;
+  justify-content: center;
+}
 img {
-  min-width: 300px;
-  min-height: 475px;
+  width: 300px;
+  height: 475px;
 }
 </style>
