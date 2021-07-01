@@ -13,7 +13,7 @@
           {{ ratingsVisible ? "Hide Average Rating" : "Show Average Rating" }}
         </button>
       </div>
-      <h1 v-if="this.ratingsVisible">{{ rating }}</h1>
+      <div class="ratings" v-if="this.ratingsVisible">{{ rating }}</div>
       <div v-if="this.ratingsVisible">
         <Ratings :scores="scores" />
       </div>
@@ -87,6 +87,12 @@ div .btn-wrapper {
 div .img-wrapper {
   display: flex;
   justify-content: center;
+}
+div .ratings {
+  font-size: 75px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 0px;
 }
 img {
   width: 300px;
