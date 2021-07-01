@@ -1,10 +1,10 @@
 <template>
-    <p>Kate: {{ scores.kate }}</p>
-    <p>Neal: {{ scores.neal }}</p>
-    <p>GG: {{ scores.gg }}</p>
-    <p>Clinch: {{ scores.clinch }}</p>
-    <p>Tim: {{ scores.tim }}</p>
-    <p>Charlotte: {{ scores.charlotte }}</p>
+  <p>Kate: {{ scores.kate }}</p>
+  <p>Neal: {{ scores.neal }}</p>
+  <p>GG: {{ scores.gg }}</p>
+  <p>Clinch: {{ scores.clinch }}</p>
+  <p>Tim: {{ scores.tim }}</p>
+  <p>Charlotte: {{ scores.charlotte }}</p>
 </template>
 
 <script lang="ts">
@@ -21,4 +21,8 @@ export default defineComponent({
 });
 </script>
 
-
+<style>
+p {
+  letter-spacing: 2px;
+}
+</style>
