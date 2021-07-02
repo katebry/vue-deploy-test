@@ -1,7 +1,7 @@
 <template>
-<div class="title-container">
-  <Title msg="Book Club" />
-</div>
+  <div class="title-container">
+    <Title msg="Book Club" />
+  </div>
   <Book
     v-for="book in books"
     :key="book.title"
@@ -24,7 +24,7 @@ export default defineComponent({
     Title,
     Book,
   },
-  data: function() {
+  data() {
     return {
       books: [
         {
@@ -32,56 +32,56 @@ export default defineComponent({
           rating: "4.5",
           imageName: "nevada",
           imageAlt: "Nevada book cover",
-          scores: {
-            kate: "3",
-            neal: "5",
-            gg: "6.5",
-            clinch: "5",
-            tim: "N/A",
-            charlotte: "N/A",
-          },
+          scores: [
+            { name: "kate", score: "3" },
+            { name: "neal", score: "5" },
+            { name: "gg", score: "6.5" },
+            { name: "clinch", score: "5" },
+            { name: "tim", score: "N/A" },
+            { name: "charlotte", score: "N/A" },
+          ],
         },
         {
           title: "One Day in the Life of Ivan Denisovich",
           rating: "7.4",
           imageName: "ivanDenisovich",
           imageAlt: "One Day in the Life of Ivan Denisovich book cover",
-          scores: {
-            kate: "10",
-            neal: "9",
-            gg: "3",
-            clinch: "7",
-            tim: "8",
-            charlotte: "N/A",
-          },
+          scores: [
+            { name: "kate", score: "10" },
+            { name: "neal", score: "9" },
+            { name: "gg", score: "3" },
+            { name: "clinch", score: "7" },
+            { name: "tim", score: "8" },
+            { name: "charlotte", score: "N/A" },
+          ],
         },
         {
           title: "Stonefish",
           rating: "3.9",
-          imageName: 'stonefish',
-          imageAlt: 'Stonefish book cover',
-          scores: {
-            kate: "1.5",
-            neal: "4",
-            gg: "5",
-            clinch: "N/A",
-            tim: "5",
-            charlotte: "N/A",
-          },
+          imageName: "stonefish",
+          imageAlt: "Stonefish book cover",
+          scores: [
+            { name: "kate", score: "1.5" },
+            { name: "neal", score: "4" },
+            { name: "gg", score: "5" },
+            { name: "clinch", score: "N/A" },
+            { name: "tim", score: "5" },
+            { name: "charlotte", score: "N/A" },
+          ],
         },
         {
           title: "The Haunting of Hill House",
           rating: "8.4",
-          imageName: 'hauntingOfHH',
-          imageAlt: 'The Haunting of Hill House book cover',
-          scores: {
-            kate: "8",
-            neal: "10",
-            gg: "N/A",
-            clinch: "7",
-            tim: "8",
-            charlotte: "9",
-          },
+          imageName: "hauntingOfHH",
+          imageAlt: "The Haunting of Hill House book cover",
+          scores: [
+            { name: "kate", score: "8" },
+            { name: "neal", score: "10" },
+            { name: "gg", score: "N/A" },
+            { name: "clinch", score: "7" },
+            { name: "tim", score: "8" },
+            { name: "charlotte", score: "9" },
+          ],
         },
       ],
     };
@@ -93,7 +93,7 @@ export default defineComponent({
 @font-face {
   font-family: "Avaline Script";
   src: local("Avaline Script Sketch"),
-   url("./assets/fonts/Avaline-Script-Sketch.ttf") format("truetype");
+    url("./assets/fonts/Avaline-Script-Sketch.ttf") format("truetype");
 }
 #app {
   font-family: Avaline Script;

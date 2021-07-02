@@ -15,7 +15,12 @@
       </div>
       <div class="ratings" v-if="this.ratingsVisible">{{ rating }}</div>
       <div v-if="this.ratingsVisible">
-        <Ratings :scores="scores" />
+        <Ratings
+          v-for="score in scores"
+          :key="score.name"
+          :score="score.score"
+          :name="score.name"
+        />
       </div>
     </div>
   </div>
@@ -43,7 +48,7 @@ export default defineComponent({
     imageAlt: String,
     scores: Object,
   },
-  data: function () {
+  data() {
     return {
       ratingsVisible: false,
     };

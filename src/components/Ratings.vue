@@ -1,10 +1,5 @@
 <template>
-  <p>Kate: {{ scores.kate }}</p>
-  <p>Neal: {{ scores.neal }}</p>
-  <p>GG: {{ scores.gg }}</p>
-  <p>Clinch: {{ scores.clinch }}</p>
-  <p>Tim: {{ scores.tim }}</p>
-  <p>Charlotte: {{ scores.charlotte }}</p>
+  <p>{{ name }} : {{ score }}</p>
 </template>
 
 <script lang="ts">
@@ -13,16 +8,20 @@ import { defineComponent } from "vue";
 export default defineComponent({
   name: "Ratings",
   props: {
-    scores: {
-      type: Object,
+    score: {
+      type: String,
+      required: true,
+    },
+    name: {
+      type: String,
       required: true,
     },
   },
 });
 </script>
 
-<style>
-p {
+<style scoped>
+div {
   letter-spacing: 2px;
 }
 </style>
